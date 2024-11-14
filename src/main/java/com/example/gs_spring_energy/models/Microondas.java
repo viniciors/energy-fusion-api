@@ -1,9 +1,6 @@
 package com.example.gs_spring_energy.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,9 +11,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "gs_microondas")
-@DiscriminatorValue("Microondas")
-public class Microondas extends Eletrodomestico {
+@Table(name = "GS_MICROONDAS")
+public class Microondas {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_microondas")
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    private Eletrodomestico eletrodomestico;
 
     @Column(name = "potencia_watts")
     private Integer potenciaWatts;

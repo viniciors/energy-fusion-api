@@ -8,11 +8,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Eletrodomestico {
+@Table(name = "gs_eletrodomesticos")
+public class Eletrodomestico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,5 +39,4 @@ public abstract class Eletrodomestico {
 
     @Column(name = "link_compra")
     private String linkCompra;
-
 }

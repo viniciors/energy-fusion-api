@@ -6,14 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "gs_geladeiras")
-@DiscriminatorValue("Geladeira")
-public class Geladeira extends Eletrodomestico {
+@Table(name = "GS_GELADEIRAS")
+public class Geladeira {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_geladeira")
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    private Eletrodomestico eletrodomestico;
 
     @Column(name = "capacidade_freezer_litros")
     private Double capacidadeFreezerLitros;
