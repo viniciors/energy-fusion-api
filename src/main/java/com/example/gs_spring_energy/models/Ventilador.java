@@ -11,28 +11,28 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "gs_ventiladores")
+@Table(name = "GS_Ventiladores")
 public class Ventilador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_ventilador")
+    @Column(name = "IdVentilador")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    @JoinColumn(name = "EletrodomesticoId", referencedColumnName = "id")
     private Eletrodomestico eletrodomestico;
 
-    @Column(name = "quantidade_pas")
+    @Column(name = "QuantidadePas")
     private Integer quantidadePas;
 
-    @Column(name = "quantidade_velocidades")
+    @Column(name = "QuantidadeVelocidades")
     private Integer quantidadeVelocidades;
 
-    @Column(name = "tipo_ventilador")
+    @Column(name = "TipoVentilador")
     private String tipoVentilador;
 
-    @Column(name = "tem_inclinacao_regulavel")
+    @Column(name = "TemInclinacaoRegulavel")
     private String temInclinacaoRegulavel;
 
 }

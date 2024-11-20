@@ -11,27 +11,27 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "GS_CAFETEIRAS")
+@Table(name = "GS_Cafeteiras")
 public class Cafeteira {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cafeteira")
+    @Column(name = "IdCafeteira")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    @JoinColumn(name = "EletrodomesticoId", referencedColumnName = "id")
     private Eletrodomestico eletrodomestico;
 
-    @Column(name = "capacidade_agua")
+    @Column(name = "CapacidadeAgua")
     private Double capacidadeAgua;
 
-    @Column(name = "pressao")
+    @Column(name = "Pressao")
     private Double pressao;
 
-    @Column(name = "capsulas_compativeis")
+    @Column(name = "CapsulasCompativeis")
     private String capsulasCompativeis;
 
-    @Column(name = "tecnologia")
+    @Column(name = "Tecnologia")
     private String tecnologia;
 }

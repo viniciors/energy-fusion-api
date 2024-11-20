@@ -11,31 +11,31 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "gs_lavadoras")
+@Table(name = "GS_Lavadoras")
 public class Lavadora {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_lavadora")
+    @Column(name = "IdMaquina")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    @JoinColumn(name = "EletrodomesticoId", referencedColumnName = "id")
     private Eletrodomestico eletrodomestico;
 
-    @Column(name = "capacidade_kg")
+    @Column(name = "CapacidadeKg")
     private Double capacidadeKg;
 
-    @Column(name = "consumo_agua")
+    @Column(name = "ConsumoAgua")
     private Double consumoAgua;
 
-    @Column(name = "sistema_lavagem")
+    @Column(name = "SistemaLavagem")
     private String sistemaLavagem;
 
-    @Column(name = "velocidade_centrifugacao_rpm")
+    @Column(name = "VelocidadeCentrifugacaoRpm")
     private Integer velocidadeCentrifugacaoRpm;
 
-    @Column(name = "tem_agua_quente")
+    @Column(name = "TemAguaQuente")
     private String temAguaQuente;
 
 }

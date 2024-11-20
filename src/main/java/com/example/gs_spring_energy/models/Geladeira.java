@@ -12,31 +12,31 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "GS_GELADEIRAS")
+@Table(name = "GS_Geladeiras")
 public class Geladeira {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_geladeira")
+    @Column(name = "IdGeladeira")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    @JoinColumn(name = "EletrodomesticoId", referencedColumnName = "id")
     private Eletrodomestico eletrodomestico;
 
-    @Column(name = "capacidade_freezer_litros")
+    @Column(name = "CapacidadeFreezerLitros")
     private Double capacidadeFreezerLitros;
 
-    @Column(name = "consumo_kwh")
+    @Column(name = "ConsumoKwh")
     private Double consumoKwh;
 
-    @Column(name = "quantidade_portas")
+    @Column(name = "QuantidadePortas")
     private Integer quantidadePortas;
 
-    @Column(name = "tipo_display")
+    @Column(name = "TipoDisplay")
     private String tipoDisplay;
 
-    @Column(name = "tem_porta_latas")
+    @Column(name = "TemPortaLatas")
     private String temPortaLatas;
 
 }

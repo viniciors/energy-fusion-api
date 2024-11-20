@@ -1,13 +1,17 @@
 package com.example.gs_spring_energy.dto.response;
 
+import org.springframework.hateoas.Link;
+
+import java.util.List;
+
 public record EletrodomesticoResponseDTO(
-        Long idEletrodomestico,
+        Long id,
         String voltagem,
         String marca,
         String modelo,
         String eficienciaEnergetica,
         String cor,
         Double peso,
-        String linkCompra
-) {
-}
+        String linkCompra,
+        List<Link> links
+) {}

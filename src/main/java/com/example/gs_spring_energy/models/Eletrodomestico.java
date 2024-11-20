@@ -11,32 +11,32 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "gs_eletrodomesticos")
+@Table(name = "GS_Eletrodomesticos")
 public class Eletrodomestico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Id")
     private Long id;
 
-    @Column(name = "voltagem")
+    @Column(name = "Voltagem")
     private String voltagem;
 
-    @Column(name = "marca")
+    @Column(name = "Marca")
     private String marca;
 
-    @Column(name = "modelo")
+    @Column(name = "Modelo")
     private String modelo;
 
-    @Column(name = "eficiencia_energetica")
+    @Column(name = "EficienciaEnergetica")
     private String eficienciaEnergetica;
 
-    @Column(name = "cor")
+    @Column(name = "Cor")
     private String cor;
 
-    @Column(name = "peso")
+    @Column(name = "Peso")
     private Double peso;
 
-    @Column(name = "link_compra")
+    @Column(name = "LinkCompra")
     private String linkCompra;
 }

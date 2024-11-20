@@ -11,31 +11,31 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "GS_MICROONDAS")
+@Table(name = "GS_Microondas")
 public class Microondas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_microondas")
+    @Column(name = "IdMicroondas")
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "eletrodomesticos_id", referencedColumnName = "id")
+    @JoinColumn(name = "EletrodomesticoId", referencedColumnName = "id")
     private Eletrodomestico eletrodomestico;
 
-    @Column(name = "potencia_watts")
+    @Column(name = "PotenciaWatts")
     private Integer potenciaWatts;
 
-    @Column(name = "quantidade_programas")
+    @Column(name = "QuantidadeProgramas")
     private Integer quantidadeProgramas;
 
-    @Column(name = "diametro_prato")
+    @Column(name = "DiametroPrato")
     private Double diametroPrato;
 
-    @Column(name = "frequencia")
+    @Column(name = "Frequencia")
     private Integer frequencia;
 
-    @Column(name = "tem_descongelamento")
+    @Column(name = "TemDescongelamento")
     private String temDescongelamento;
 
 }
