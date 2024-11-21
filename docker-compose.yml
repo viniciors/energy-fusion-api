@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  gs-spring-energy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oracle-db
+    environment:
+      SPRING_APPLICATION_NAME: "gs-spring-energy"
+      SPRING_DATASOURCE_URL: "jdbc:oracle:thin:@//oracle-db:1521/ORCL"
+      SPRING_DATASOURCE_USERNAME: "rm553813"
+      SPRING_DATASOURCE_PASSWORD: "050496"
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+
+  oracle-db:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+      ORACLE_PASSWORD: "050496"
+    volumes:
+      - oracle-data:/u01/app/oracle
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - gs-spring-energy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  oracle-data:
