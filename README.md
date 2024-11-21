@@ -1,7 +1,7 @@
 # **Energy Fusion - API de Eletrodomésticos com Eficiência Energética**
 
 ### **Descrição do Projeto**
-O **GS Spring Energy** é uma API desenvolvida em Java usando o framework Spring Boot, projetada para armazenar, gerenciar e consultar informações sobre eletrodomésticos com eficiência energética de nível **A**. Os dados armazenados são utilizados na construção de um site informativo ou aplicativo móvel que visa promover a eficiência energética.
+O **Energy Fusion** é uma API desenvolvida em Java usando o framework Spring Boot, projetada para armazenar, gerenciar e consultar informações sobre eletrodomésticos com eficiência energética de nível **A**. Os dados armazenados são utilizados na construção de um site informativo ou aplicativo móvel que visa promover a eficiência energética.
 
 ### **Integrantes do grupo**
 - [Arthur Fenili](https://www.linkedin.com/in/arthur-fenili) - RM: 552752
