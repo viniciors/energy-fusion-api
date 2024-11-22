@@ -28,7 +28,7 @@ services:
       - "1521:1521"
     environment:
       ORACLE_ALLOW_REMOTE: "true"
-      ORACLE_PASSWORD: "110900"
+      ORACLE_PASSWORD: "050496"
     volumes:
       - oracle-data:/u01/app/oracle
     networks:
